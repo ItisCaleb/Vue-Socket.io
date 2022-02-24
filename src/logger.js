@@ -10,25 +10,25 @@ export default new class VueSocketIOLogger {
 
     info(text, data = '') {
 
-        if(this.debug) window.console.info(this.prefix+`%c${text}`, 'color: blue; font-weight: 600', 'color: #333333', data);
+        if(this.debug) window.console.info(this.prefix+`%c${text}`, 'color: lightgreen; font-weight: 600', 'color: white', data);
 
     }
 
-    error() {
+    error(text) {
 
-        if(this.debug) window.console.error(this.prefix, ...arguments);
+        if(this.debug) window.console.error(this.prefix, '', ...arguments);
 
     }
 
     warn() {
 
-        if(this.debug) window.console.warn(this.prefix, ...arguments);
+        if(this.debug) window.console.warn(this.prefix, '', ...arguments);
 
     }
 
     event(text, data = ''){
 
-        if(this.debug) window.console.info(this.prefix+`%c${text}`, 'color: blue; font-weight: 600', 'color: #333333', data);
+        if(this.debug) window.console.info(this.prefix+`%c${text}`, 'color: lightgreen; font-weight: 600', 'color: white', data);
 
     }
 

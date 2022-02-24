@@ -2,7 +2,10 @@ import Mixin from './mixin';
 import Logger from './logger';
 import Listener from './listener';
 import Emitter from './emitter';
-import SocketIO from 'socket.io-client';
+import SocketIO2 from 'socket.io-client2';
+import SocketIO3 from 'socket.io-client3';
+import SocketIO4 from 'socket.io-client3';
+let SocketIO;
 
 export default class VueSocketIO {
 
@@ -13,9 +16,25 @@ export default class VueSocketIO {
      * @param debug
      * @param options
      */
-    constructor({connection, vuex, debug, options}){
+    constructor({connection, vuex, debug, options,version = 4}){
 
         Logger.debug = debug;
+
+        switch (version){
+            case 2:
+                SocketIO = SocketIO2;
+                break;
+            case 3:
+                SocketIO = SocketIO3;
+                break;
+            case 4:
+                SocketIO = SocketIO4;
+                break;
+            default:
+                SocketIO = SocketIO4;
+                Logger.warn('Undefined version. Use version 4 by default.');
+        }
+
         this.io = this.connect(connection, options);
         this.emitter = new Emitter(vuex);
         this.listener = new Listener(this.io, this.emitter);

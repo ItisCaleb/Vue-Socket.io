@@ -46,7 +46,8 @@ Vue.use(new VueSocketIO({
         actionPrefix: 'SOCKET_',
         mutationPrefix: 'SOCKET_'
     },
-    options: { path: "/my-app/" } //Optional options
+    options: { path: "/my-app/" }, //Optional options
+    version: 4
 }))
 
 new Vue({
@@ -84,13 +85,14 @@ new Vue({
 }).$mount('#app')
 ```
 
-**Parameters**|**Type's**|**Default**|**Required**|**Description**
------|-----|-----|-----|-----
-debug|Boolean|`false`|Optional|Enable logging for debug
-connection|String/Socket.io-client|`null`|Required|Websocket server url or socket.io-client instance
-vuex.store|Vuex|`null`|Optional|Vuex store instance
-vuex.actionPrefix|String|`null`|Optional|Prefix for emitting server side vuex actions
-vuex.mutationPrefix|String |`null`|Optional|Prefix for emitting server side vuex mutations
+| **Parameters**      | **Type's**              | **Default** | **Required** | **Description**                                   |
+|---------------------|-------------------------|-------------|--------------|---------------------------------------------------|
+| debug               | Boolean                 | `false`     | Optional     | Enable logging for debug                          |
+| connection          | String/Socket.io-client | `null`      | Required     | Websocket server url or socket.io-client instance |
+| version             | Number                  | `4`         | Optional     | Socket.io version, only accept 2,3,4              |
+| vuex.store          | Vuex                    | `null`      | Optional     | Vuex store instance                               |
+| vuex.actionPrefix   | String                  | `null`      | Optional     | Prefix for emitting server side vuex actions      |
+| vuex.mutationPrefix | String                  | `null`      | Optional     | Prefix for emitting server side vuex mutations    |
 
 #### 🌈 Component Level Usage
 

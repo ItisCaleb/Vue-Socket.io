@@ -54,7 +54,8 @@ export interface VueSocketOptions {
         // type declarations for optional options
     options?:{
         path?: string;
-    }
+    },
+    version?: number;
 }
 
 export default class VueSocketIO<T> implements PluginObject<T> {
