@@ -1,5 +1,5 @@
 {
-  "name": "vue-socket.io",
+  "name": "@itiscaleb/vue-socket.io",
   "author": "ItisCaleb <happycaleb1212@gmail.com>",
   "version": "4.0.0",
   "description": "socket.io implementation for Vue.js and Vuex, fork from https://github.com/MetinSeylan/Vue-Socket.io.git",
